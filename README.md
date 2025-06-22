@@ -4,10 +4,10 @@ Este proyecto utiliza un modelo de Machine Learning (Random Forest) para predeci
 
 ## 🚀 Estructura del proyecto
 📂 kankay-modelo/
-├── app.py # App de Streamlit
-├── modelo_entregas_kankay_comprimido.pkl # Modelo entrenado (comprimido con joblib)
-├── kankay_datos_limpios.csv # Dataset limpio original
-└── README.md # Este archivo
+- app.py # App de Streamlit
+- - modelo_entregas_kankay_comprimido.pkl # Modelo entrenado (comprimido con joblib y pkl)
+- - kankay_datos_limpios.csv # Dataset procesado
+- - README.md # Este archivo
 
 ## 🧪 ¿Qué incluye?
 
