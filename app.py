@@ -30,7 +30,7 @@ mes = st.selectbox("Mes", ['January', 'February', 'March', 'April', 'May', 'June
 hora = st.slider("Hora de entrega (0-23)", 0, 23, 12)
 
 # --- Preparamos los datos de entrada ---
-if st.button("📊 Predecir"):
+if st.button("Predecir"):
     print("Procesando input...")
     input_dict = {
         'Forma de entrega': [forma_entrega],
@@ -42,7 +42,7 @@ if st.button("📊 Predecir"):
     input_df = pd.DataFrame(input_dict)
 
     # Debug visual
-    st.subheader("📋 Datos de entrada procesados:")
+    st.subheader("Datos de entrada procesados:")
     st.dataframe(input_df)
 
     # One-hot encoding (igual que el training)
@@ -60,6 +60,6 @@ if st.button("📊 Predecir"):
 
     # Resultado
     if pred == 1:
-        st.error(f"⚠️ ¡Atención! Alta probabilidad de entrega tardía. ({proba:.1%})")
+        st.error(f"¡Atención! Alta probabilidad de entrega tardía. ({proba:.1%})")
     else:
-        st.success(f"✅ Entrega a tiempo estimada. (Probabilidad de demora: {proba:.1%})")
+        st.success(f"Entrega a tiempo estimada. (Probabilidad de demora: {proba:.1%})")
