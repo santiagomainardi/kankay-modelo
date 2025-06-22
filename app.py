@@ -29,9 +29,6 @@ dia_semana = st.selectbox("Día de la semana", ['Monday', 'Tuesday', 'Wednesday'
 mes = st.selectbox("Mes", ['January', 'February', 'March', 'April', 'May', 'June'])
 hora = st.slider("Hora de entrega (0-23)", 0, 23, 12)
 
-st.write("📋 Datos de entrada procesados:")
-st.dataframe(input_df)
-
 # --- Preparamos los datos de entrada ---
 if st.button("📊 Predecir"):
     input_dict = {
