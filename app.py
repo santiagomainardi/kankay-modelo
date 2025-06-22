@@ -31,6 +31,7 @@ hora = st.slider("Hora de entrega (0-23)", 0, 23, 12)
 
 # --- Preparamos los datos de entrada ---
 if st.button("📊 Predecir"):
+    print("Procesando input...")
     input_dict = {
         'Forma de entrega': [forma_entrega],
         'Ciudad': [ciudad],
