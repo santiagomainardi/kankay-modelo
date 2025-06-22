@@ -40,9 +40,13 @@ if st.button("📊 Predecir"):
     }
     input_df = pd.DataFrame(input_dict)
 
+    # Debug visual
+    st.subheader("📋 Datos de entrada procesados:")
+    st.dataframe(input_df)
+
     # One-hot encoding (igual que el training)
     input_encoded = pd.get_dummies(input_df)
-    
+
     # Alineamos con las columnas del modelo
     for col in modelo.feature_names_in_:
         if col not in input_encoded.columns:
@@ -53,8 +57,8 @@ if st.button("📊 Predecir"):
     pred = modelo.predict(input_encoded)[0]
     proba = modelo.predict_proba(input_encoded)[0][1]
 
+    # Resultado
     if pred == 1:
         st.error(f"⚠️ ¡Atención! Alta probabilidad de entrega tardía. ({proba:.1%})")
     else:
         st.success(f"✅ Entrega a tiempo estimada. (Probabilidad de demora: {proba:.1%})")
-
